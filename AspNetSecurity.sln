@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cors.API", "Cors.API\Cors.API.csproj", "{44BEBA68-C767-4894-A73D-90BD8FE9E25B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cors.API", "Cors.API\Cors.API.csproj", "{44BEBA68-C767-4894-A73D-90BD8FE9E25B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cors.UI", "Cors.UI\Cors.UI.csproj", "{FE919488-9524-4886-A4CD-E69E750B6C65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cors.UI", "Cors.UI\Cors.UI.csproj", "{FE919488-9524-4886-A4CD-E69E750B6C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimit.API", "RateLimit.API\RateLimit.API.csproj", "{B2950E52-C59F-402E-A0E2-F6AB1497DFD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FE919488-9524-4886-A4CD-E69E750B6C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE919488-9524-4886-A4CD-E69E750B6C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE919488-9524-4886-A4CD-E69E750B6C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2950E52-C59F-402E-A0E2-F6AB1497DFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2950E52-C59F-402E-A0E2-F6AB1497DFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2950E52-C59F-402E-A0E2-F6AB1497DFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2950E52-C59F-402E-A0E2-F6AB1497DFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
