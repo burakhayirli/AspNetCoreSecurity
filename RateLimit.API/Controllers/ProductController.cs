@@ -10,7 +10,13 @@ namespace RateLimit.API.Controllers
         [HttpGet]
         public IActionResult GetProduct()
         {
-            return Ok(new { ProductId = 1, Name="Pencil",Price="20"});
+            return Ok(new { ProductId = 1, Name = "Pencil", Price = "20" });
+        }
+
+        [HttpPost]
+        public IActionResult SaveProduct()
+        {
+            return Ok(new { Status = "Success" });
         }
     }
 }
