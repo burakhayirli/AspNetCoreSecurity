@@ -35,11 +35,14 @@ namespace RateLimit.API
             services.AddMemoryCache();
 
             //Ip adresleri ile ilgili izinleri belirtmemiz lazým.
-            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            //services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            //services.Configure<IpRateLimitPolicies>(Configuration.GetSection("IpRateLimitPolicies"));
+            //services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
 
-            services.Configure<IpRateLimitPolicies>(Configuration.GetSection("IpRateLimitPolicies"));
-
-            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            //Client bazlý kurallar vermek için
+            services.Configure<ClientRateLimitOptions>(Configuration.GetSection("ClientRateLimiting"));
+            services.Configure<ClientRateLimitPolicies>(Configuration.GetSection("ClientRateLimitPolicies"));
+            services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
 
             //Eðer uygulamamýzýn birden fazla instanceý ayaða kalkma durumu varsa distrubuted cache kullanýlmalý.
             //services.AddSingleton<IIpPolicyStore, DistributedCacheIpPolicyStore>();
@@ -75,8 +78,11 @@ namespace RateLimit.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RateLimit.API v1"));
             }
 
-            //Middleware
-            app.UseIpRateLimiting();
+            //Ip Rate Limit Middleware
+            //app.UseIpRateLimiting();
+
+            //ClientId Rate Limit
+            app.UseClientRateLimiting();
 
             app.UseHttpsRedirection();
 

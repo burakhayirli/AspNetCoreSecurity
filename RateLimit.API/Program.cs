@@ -1,13 +1,7 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreRateLimit;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace RateLimit.API
 {
@@ -17,7 +11,11 @@ namespace RateLimit.API
         {
             var webHost = CreateHostBuilder(args).Build();
 
-            var ipPolicy = webHost.Services.GetRequiredService<IIpPolicyStore>();
+            //Ip Rate Limit
+            //var ipPolicy = webHost.Services.GetRequiredService<IIpPolicyStore>();
+            
+            //ClientId Rate Limit
+            var ipPolicy = webHost.Services.GetRequiredService<IClientPolicyStore>();
 
             ipPolicy.SeedAsync().Wait();
 
